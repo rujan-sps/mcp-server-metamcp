@@ -41,4 +41,4 @@ ENV NODE_ENV=production
 EXPOSE 3000
 
 # Run the application
-ENTRYPOINT ["node", "dist/index.js"] 
+CMD ["node", "dist/index.js", "--transport", "sse", "--port", "${PORT}", "--metamcp-api-key", "${METAMCP_API_KEY}", "--use-docker-host"]

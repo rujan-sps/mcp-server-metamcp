@@ -58,7 +58,7 @@ async function main() {
 
   if (options.transport.toLowerCase() === "sse") {
     // Start SSE server
-    const port = parseInt(options.port) || 12006;
+    const port =  process.env.PORT || parseInt(options.port) || 12006;
     const sseCleanup = await startSSEServer(server, {
       port,
       requireApiAuth: options.requireApiAuth,
